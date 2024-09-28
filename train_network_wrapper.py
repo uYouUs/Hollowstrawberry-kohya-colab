@@ -1,5 +1,5 @@
 try:
-    from train_network import setup_parser, ‎NetworkTrainer
+    from train_network import setup_parser, NetworkTrainer
     from library.train_util import read_config_from_file
 
     print("\nSetting up Parser.")
