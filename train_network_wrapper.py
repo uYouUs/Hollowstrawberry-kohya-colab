@@ -4,6 +4,8 @@ try:
 
     parser = setup_parser()
     args = parser.parse_args()
+    print(f"\n  --dataset_config={args.dataset_config}")
+    print(f"\n  --config_file={args.config_file}")
     args = read_config_from_file(args, parser)
 
     trainer = NetworkTrainer()
