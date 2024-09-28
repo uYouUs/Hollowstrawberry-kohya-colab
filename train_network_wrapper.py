@@ -2,10 +2,12 @@ try:
     from train_network import setup_parser, ‎NetworkTrainer
     from library.train_util import read_config_from_file
 
+    print("\nSetting up Parser.")
     parser = setup_parser()
+    print("\nParsing Args.")
     args = parser.parse_args()
     print(f"\n  --dataset_config={args.dataset_config}")
-    print(f"\n  --config_file={args.config_file}")
+    print(f"\n  --config_file={args.config_file}\n")
     args = read_config_from_file(args, parser)
 
     trainer = NetworkTrainer()
