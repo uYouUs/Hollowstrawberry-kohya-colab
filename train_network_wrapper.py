@@ -1,19 +1,11 @@
 try:
     from train_network import setup_parser, NetworkTrainer
     from library.train_util import read_config_from_file
-    import logging
 
-    print("\nSetting up Parser.")
     parser = setup_parser()
-    print("\nParsing Args.")
     args = parser.parse_args()
-    print(f"\n  --dataset_config={args.dataset_config}")
-    print(f"\n  --config_file={args.config_file}\n")
-    print("\nReading from File.\n")
     args = read_config_from_file(args, parser)
-    print("Finished Reading args")
-    logger = logging.getLogger('my-logger')
-    logger.propagate = False
+
     trainer = NetworkTrainer()
     trainer.train(args)
     print("\n\033[1m✅ Done! Go download your Lora from Google Drive.\nThere will be several files, you should try the latest version (the file with the largest number next to it)")
